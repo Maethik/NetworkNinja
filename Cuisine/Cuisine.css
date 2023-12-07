@@ -1,0 +1,28 @@
+body{
+    justify-items: center;
+    align-items: center;;
+}
+.cuisine{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin:50px;
+    width: 90vw;
+    justify-content: space-between;
+}
+.conseil{
+    display:flex;
+    flex-direction: row;
+    margin-bottom: 130px;
+    text-align: center;
+    align-items: center;
+}
+p{
+    background-color: #83b633;
+    border-radius:0px 15%;
+    padding: 30px;
+    width: 300px;
+}
+img{
+    border-radius: 30px;
+}
