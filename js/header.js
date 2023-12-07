@@ -2,7 +2,7 @@ function checkInput() {
     var inputValue = document.getElementById("search-input").value;
 
     if (inputValue === "egg" || inputValue === "easter egg") {
-        displayImage("/img/easter-egg.svg");
+        displayImage("img/easter-egg.svg");
         setTimeout(clearImage, 2000);
     } else {
         document.getElementById("outputText").innerHTML = inputValue;
