@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+}
+
+.boule_cristal {
+    position: fixed;
+    width: 150px;
+    top: 0; /* Ajustez si nécessaire */
+    right: 0;
+    margin: 20px; /* Ajustez la marge selon vos préférences */
+}
+
+.scenario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.summary_box_scenario {
+    border-radius: 45%;
+    text-align: center;
+    width: 300px; /* Définissez la largeur souhaitée */
+    height: 200px; /* Définissez la hauteur souhaitée */
+    margin: 20px; /* Marge extérieure */
+    padding: 20px; /* Remplissage intérieur */
+    background: rgba( 255, 117, 0, 0.7 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.chiffre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 400px;
+    -size: 24px;
+    font-weight: bold;
+}
+
+.anim {
+    animation: count-up 5s ease-out forwards;
+}
+
+@keyframes count-up {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
