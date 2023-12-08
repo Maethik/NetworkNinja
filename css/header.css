@@ -73,3 +73,22 @@ header {
         transform: rotate(360deg);
     }
 }
+
+#blackout {
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: auto;
+    width: 100vw;
+    height: 0vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+#blackout p {
+    color: white;
+    font-size: 2rem;
+}
