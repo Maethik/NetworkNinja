@@ -1,1 +1,3 @@
-ErrorDocument 404 /tetris/tetris.html
+---
+permalink: /tetris/tetris.html
+---
