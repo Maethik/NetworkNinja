@@ -45,34 +45,21 @@
     </nav>
 
     <script src="js/header.js"></script>
-    <script>
-        var nav = document.getElementById("nav");
-        var combinaisonEasterEgg = ['c', 'l', 'i', 'm', 'a', 't'];
-        var toucheIndex = 0;
-
-        document.addEventListener('keydown', function (event) {
-            var touchePressee = event.key.toLowerCase();
-            if (touchePressee === combinaisonEasterEgg[toucheIndex]) {
-                toucheIndex++;
-
-                if (toucheIndex === combinaisonEasterEgg.length) {
-                    document.getElementById("easterText").innerHTML = "Easter Egg déclanché !";
-                    window.addEventListener('click', function () {
-                        if (nav.style.flexDirection === 'row') {
-                            nav.style.flexDirection = 'row-reverse';
-                        }
-                        else {
-                            nav.style.flexDirection = 'row';
-                        }
-                            
-                    })
-                    toucheIndex = 0;
-                }
-            } else {
-                toucheIndex = 0;
+    <script src="js/row-reverse.js"></script>
+    <!--<script>
+        // Fonction pour gérer les erreurs
+        function handleErrors(event) {
+            // Vérifier si c'est une erreur 404
+            if (event && event.status === 404) {
+                // Rediriger l'utilisateur vers la page d'erreur personnalisée
+                window.location.href = 'tetris/tetris.html';
             }
-        });
-    </script>
+        }
+
+        // Attacher la fonction handleErrors à l'événement window.onerror
+        window.onerror = handleErrors;
+
+    </script>-->
 </body>
 
 </html>
