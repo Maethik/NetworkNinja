@@ -129,7 +129,7 @@ function placeTetromino() {
     tetromino = getNextTetromino();
 
     // Vérifier si le score atteint 404 et arrêter le jeu
-    if (score === 404) {
+    if (score === 20) {
         showGameOver();
     }
 }
