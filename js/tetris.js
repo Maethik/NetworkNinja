@@ -2,6 +2,9 @@
 
 // get a random integer between the range of [min,max]
 // @see https://stackoverflow.com/a/1527820/2124254
+// Ajouter une variable pour le nombre de points
+let score = 0;
+
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -77,9 +80,6 @@ function isValidMove(matrix, cellRow, cellCol) {
 
 // place the tetromino on the playfield
 function placeTetromino() {
-    // Ajouter une variable pour le nombre de points
-    let score = 0;
-
     for (let row = 0; row < tetromino.matrix.length; row++) {
         for (let col = 0; col < tetromino.matrix[row].length; col++) {
             if (tetromino.matrix[row][col]) {
@@ -229,6 +229,13 @@ let gameOver = false;
 function loop() {
     rAF = requestAnimationFrame(loop);
     context.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Afficher le score à l'écran (ajoutez cela à la fonction loop)
+    context.fillStyle = 'white';
+    context.font = '20px monospace';
+    context.textAlign = 'left';
+    context.textBaseline = 'top';
+    context.fillText('Score: ' + score, 20, 20);
 
     // draw the playfield
     for (let row = 0; row < 20; row++) {
