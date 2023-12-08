@@ -1,10 +1,17 @@
+// Initialise le compteur à zéro
+var score = 0;
+var increment = 10
+// Fonction pour incrémenter le compteur et mettre à jour l'affichage
+function incrementerScore() {
+    score+=increment;
+    document.getElementById('score').textContent = score;
+}
+
+
 // https://tetris.fandom.com/wiki/Tetris_Guideline
 
 // get a random integer between the range of [min,max]
 // @see https://stackoverflow.com/a/1527820/2124254
-// Ajouter une variable pour le nombre de points
-let score = 0;
-
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -88,6 +95,9 @@ function placeTetromino() {
                 if (tetromino.row + row < 0) {
                     return showGameOver();
                 }
+                if (score >= 404) {
+                    return showWin();
+                }
 
                 playfield[tetromino.row + row][tetromino.col + col] = tetromino.name;
             }
@@ -104,34 +114,14 @@ function placeTetromino() {
                     playfield[r][c] = playfield[r - 1][c];
                 }
             }
+            incrementerScore();
         }
         else {
             row--;
         }
     }
 
-    // check for line clears starting from the bottom and working our way up
-    for (let row = playfield.length - 1; row >= 0;) {
-        if (playfield[row].every(cell => !!cell)) {
-            // drop every row above this one
-            for (let r = row; r >= 0; r--) {
-                for (let c = 0; c < playfield[r].length; c++) {
-                    playfield[r][c] = playfield[r - 1][c];
-                }
-            }
-            // Ajouter des points pour chaque ligne effacée
-            score += 10;
-        } else {
-            row--;
-        }
-    }
-
     tetromino = getNextTetromino();
-
-    // Vérifier si le score atteint 404 et arrêter le jeu
-    if (score === 20) {
-        showGameOver();
-    }
 }
 
 // show the game over screen
@@ -150,6 +140,23 @@ function showGameOver() {
     context.textBaseline = 'middle';
     context.fillText('GAME OVER!', canvas.width / 2, canvas.height / 2);
 }
+
+function showWin() {
+    cancelAnimationFrame(rAF);
+    win = true;
+
+    context.fillStyle = 'black';
+    context.globalAlpha = 0.75;
+    context.fillRect(0, canvas.height / 2 - 30, canvas.width, 60);
+
+    context.globalAlpha = 1;
+    context.fillStyle = 'white';
+    context.font = '36px monospace';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.fillText('Félicitation, \nvous avez perdu\nvotre temps !', canvas.width/2, canvas.height/2);
+}
+
 
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
@@ -230,13 +237,6 @@ function loop() {
     rAF = requestAnimationFrame(loop);
     context.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Afficher le score à l'écran (ajoutez cela à la fonction loop)
-    context.fillStyle = 'white';
-    context.font = '20px monospace';
-    context.textAlign = 'left';
-    context.textBaseline = 'top';
-    context.fillText('Score: ' + score, 20, 20);
-
     // draw the playfield
     for (let row = 0; row < 20; row++) {
         for (let col = 0; col < 10; col++) {
@@ -282,6 +282,7 @@ function loop() {
 // listen to keyboard events to move the active tetromino
 document.addEventListener('keydown', function (e) {
     if (gameOver) return;
+    //if (win) return;
 
     // left and right arrow keys (move)
     if (e.which === 37 || e.which === 39) {

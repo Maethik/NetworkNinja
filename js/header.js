@@ -36,3 +36,24 @@ function handleErrors(event) {
 }
 
 window.onerror = handleErrors;
+
+let clickCount = 0;
+
+function handleClick() {
+    clickCount++;
+
+    if (clickCount === 10) {
+        triggerEasterEgg();
+    }
+}
+
+function triggerEasterEgg() {
+    var html = document.getElementById("html");
+    var blackout = document.getElementById("blackout");
+
+    html.style.visibility = 'hidden';
+    blackout.style.visibility = 'visible';
+    blackout.style.height = '400vh';
+
+    clickCount = 0;
+}

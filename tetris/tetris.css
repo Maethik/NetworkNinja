@@ -11,6 +11,14 @@ body {
     justify-content: center;
 }
 
+body h1 {
+    color: white;
+}
+
+body p {
+    color: white;
+}
+
 canvas {
     border: 1px solid white;
 }
