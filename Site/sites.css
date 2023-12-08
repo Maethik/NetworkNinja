@@ -1,11 +1,11 @@
-.Aurevoir{
+.block{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     text-align: center;
     align-items: center;
 }
-.bonjour {
+.imageblock {
     width: 45%;
     margin: 10px;
     border-radius: 20px;
