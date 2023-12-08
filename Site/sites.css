@@ -1,0 +1,49 @@
+.Aurevoir{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+}
+.bonjour {
+    width: 45%;
+    margin: 10px;
+    border-radius: 20px;
+    /*height: 50px;*/
+    margin-bottom: 40px;
+    }
+
+img {
+    display: flex;
+    border-left: 1px solid #83b633;
+    border-top: 1px solid #83b633;
+    width: 100%;
+    height: 100%;
+    border-radius:20px 20px 0px 0px;
+}
+
+.decal{
+    background-color: #83b633;
+}
+.p{
+    border: none;
+    text-align: justify;
+    margin:0;
+    margin-left:5px ;
+    width: 95%;
+    flex-grow: 1;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    cursor: pointer;
+}
+button {
+    border-radius: 0px 0px 20px 20px;
+    border: none;
+    width: 100%;
+    height: 40px;
+    flex-grow: 1;
+    background-color: #5e8a19;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    cursor: pointer;
+}
