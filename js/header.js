@@ -7,6 +7,10 @@ function checkInput() {
     } else {
         document.getElementById("outputText").innerHTML = inputValue;
     }
+
+    if (inputValue === "tetris") {
+        window.location.href = '404.html';
+    }
 }
 
 function displayImage(imageUrl) {
@@ -24,3 +28,11 @@ function clearImage() {
     var imageContainer = document.getElementById("imageContainer");
     imageContainer.innerHTML = "";
 }
+
+function handleErrors(event) {
+    if (event && event.status === 404) {
+        window.location.href = 'tetris/tetris.html';
+    }
+}
+
+window.onerror = handleErrors;
