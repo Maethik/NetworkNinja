@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Cuisine.css">
+    <link rel="stylesheet" href="../css/header.css">
     <title>Network Ninja</title>
 </head>
 <body>
+    <header>
+        <img class="nav-logo" src="../img/leaf-1-240.png" alt="logo leaf">
+        <h1 class="nav-title">Conseils cuisine</h1>
+        <div class="search-bar-container">
+            <input id="search-input" class="nav-search-bar" type="search" placeholder="Recherche">
+            <button onclick="checkInput()"><img src="../img/magnifier-2-240.png" alt="search glass button"></button>
+        </div>
+    </header>
+    <p id="outputText"></p>
+    <div id="imageContainer"></div>
+
     <div class="cuisine">
         <div class="conseil">
             <img src="locaux.jpg" alt="fille qui réfléchit">

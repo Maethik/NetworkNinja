@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/conseils.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/accueil.css">
+    <title>Conseils</title>
+</head>
+<body>
+    <header>
+        <img class="nav-logo" src="img/leaf-1-240.png" alt="logo leaf">
+        <h1 class="nav-title">Conseils</h1>
+        <div class="search-bar-container">
+            <input id="search-input" class="nav-search-bar" type="search" placeholder="Recherche">
+            <button onclick="checkInput()"><img src="img/magnifier-2-240.png" alt="search glass button"></button>
+        </div>
+    </header>
+    <p id="outputText"></p>
+    <div id="imageContainer"></div>
+
+    <nav>
+        <div class="cadre">
+            <img class="img" src="img/transport-en-commun-900x450.jpg" alt="DIY">
+            <button onclick="window.location.href = 'Transport/Transport.html'">Transport</button>
+        </div>
+        <div class="cadre">
+            <img class="img" src="img/cuisine-eco.jpg" alt="DIY">
+            <button onclick="window.location.href = 'Cuisine/Cuisine.html'">Cuisine</button>
+        </div>
+    </nav>
+
+    <script src="js/header.js"></script>
+</body>
+</html>

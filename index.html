@@ -12,7 +12,7 @@
 <body>
     <header>
         <img class="nav-logo" src="img/leaf-1-240.png" alt="logo leaf">
-        <h1 class="nav-title">Titre de la page</h1>
+        <h1 id="easterText" class="nav-title">Accueil</h1>
         <div class="search-bar-container">
             <input id="search-input" class="nav-search-bar" type="search" placeholder="Recherche">
             <button onclick="checkInput()"><img src="img/magnifier-2-240.png" alt="search glass button"></button>
@@ -21,18 +21,14 @@
     <p id="outputText"></p>
     <div id="imageContainer"></div>
 
-    <nav>
-        <div class="cadre">
-            <img src="img/download.jpeg" alt="">
-            <button>Actualité</button>
-        </div>
+    <nav id="nav">
         <div class="cadre">
             <img class="img" src="img/front_CIESIELSKI-Zoé_0_732.jpg" alt="DIY">
             <button>DIY</button>
         </div>
         <div class="cadre">
             <img class="img" src="img/download.png" alt="Conseils">
-            <button>Conseils</button>
+            <button onclick="window.location.href = 'conseils.html'">Conseils</button>
         </div>
         <div class="cadre">
             <img class="img" src="img/achat-en-ligne.webp" alt="Achats">
@@ -43,13 +39,40 @@
             <button>Appli et site</button>
         </div>
         <div class="cadre">
-            <img class="img" src="img/63.jpg" alt="Internationale">
-            <button>Internationale</button>
+            <img class="img" src="img/boule-de-cristal-france-mineraux.png" alt="Avenir">
+            <button onclick="window.location.href = 'Avenir/avenir.html'">Avenir</button>
         </div>
-
     </nav>
 
     <script src="js/header.js"></script>
+    <script>
+        var nav = document.getElementById("nav");
+        var combinaisonEasterEgg = ['c', 'l', 'i', 'm', 'a', 't'];
+        var toucheIndex = 0;
+
+        document.addEventListener('keydown', function (event) {
+            var touchePressee = event.key.toLowerCase();
+            if (touchePressee === combinaisonEasterEgg[toucheIndex]) {
+                toucheIndex++;
+
+                if (toucheIndex === combinaisonEasterEgg.length) {
+                    document.getElementById("easterText").innerHTML = "Easter Egg déclanché !";
+                    window.addEventListener('click', function () {
+                        if (nav.style.flexDirection === 'row') {
+                            nav.style.flexDirection = 'row-reverse';
+                        }
+                        else {
+                            nav.style.flexDirection = 'row';
+                        }
+                            
+                    })
+                    toucheIndex = 0;
+                }
+            } else {
+                toucheIndex = 0;
+            }
+        });
+    </script>
 </body>
 
 </html>
