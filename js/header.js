@@ -53,7 +53,7 @@ function triggerEasterEgg() {
 
     html.style.overflow = 'hidden';
     blackout.style.visibility = 'visible';
-    blackout.style.height = '300vh';
+    blackout.style.height = '400vh';
 
     clickCount = 0;
 }
