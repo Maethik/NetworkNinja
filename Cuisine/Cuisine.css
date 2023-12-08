@@ -17,7 +17,7 @@ body{
     text-align: center;
     align-items: center;
 }
-p{
+.p{
     background-color: #83b633;
     border-radius:0px 15%;
     padding: 30px;

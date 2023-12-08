@@ -15,7 +15,7 @@ footer {
 .boule_cristal {
     position: fixed;
     width: 150px;
-    top: 0; /* Ajustez si nécessaire */
+    top: 100px; /* Ajustez si nécessaire */
     right: 0;
     margin: 20px; /* Ajustez la marge selon vos préférences */
 }
