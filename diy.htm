@@ -5,8 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="diy.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
+    <header>
+        <img class="nav-logo" src="img/leaf-1-240.png" alt="logo leaf">
+        <h1 id="easterText" class="nav-title">Accueil</h1>
+        <div class="search-bar-container">
+            <input id="search-input" class="nav-search-bar" type="search" placeholder="Recherche">
+            <button onclick="checkInput()"><img src="img/magnifier-2-240.png" alt="search glass button"></button>
+        </div>
+    </header>
+    <p id="outputText"></p>
+    <div id="imageContainer"></div>
+
     <div class="card">
         <div class="search">
             <input type="text" placeholder="enter city name" spellcheck="false">
@@ -80,5 +92,6 @@ searchBtn.addEventListener("click", ()=>{
 
 
   </script>
+  <script src="js/header.js"></script>
 </body>
 </html>
