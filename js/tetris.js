@@ -77,6 +77,9 @@ function isValidMove(matrix, cellRow, cellCol) {
 
 // place the tetromino on the playfield
 function placeTetromino() {
+    // Ajouter une variable pour le nombre de points
+    let score = 0;
+
     for (let row = 0; row < tetromino.matrix.length; row++) {
         for (let col = 0; col < tetromino.matrix[row].length; col++) {
             if (tetromino.matrix[row][col]) {
@@ -107,7 +110,28 @@ function placeTetromino() {
         }
     }
 
+    // check for line clears starting from the bottom and working our way up
+    for (let row = playfield.length - 1; row >= 0;) {
+        if (playfield[row].every(cell => !!cell)) {
+            // drop every row above this one
+            for (let r = row; r >= 0; r--) {
+                for (let c = 0; c < playfield[r].length; c++) {
+                    playfield[r][c] = playfield[r - 1][c];
+                }
+            }
+            // Ajouter des points pour chaque ligne effacée
+            score += 10;
+        } else {
+            row--;
+        }
+    }
+
     tetromino = getNextTetromino();
+
+    // Vérifier si le score atteint 404 et arrêter le jeu
+    if (score === 404) {
+        showGameOver();
+    }
 }
 
 // show the game over screen
